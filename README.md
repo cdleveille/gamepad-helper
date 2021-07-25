@@ -10,7 +10,7 @@ document.addEventListener('gamepadbuttondown', (event) => {
 
 The current state of any button or axis on a connected gamepad can also be queried via the ```getButtonValue(gamepad, button)``` and ```getAxisValue(gamepad, axis)``` methods.
 
-The **mode** property of the GamepadHelper class can be set to 'xbox' or 'playstation' to change the button labels accordingly:
+The **mode** property of an instance of the GamepadHelper class can be set to 'xbox' or 'playstation' to change the button labels accordingly:
 
 ```
 let gamepadhelper = new GamepadHelper();
