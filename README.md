@@ -13,5 +13,5 @@ document.addEventListener('gamepadbuttondown', (event) => {
 The current state of any button or axis on a connected gamepad can also be queried via the ```getButtonValue(gamepad, button)``` and ```getAxisValue(gamepad, axis)``` methods.
 
 See the following for more info on the Gamepad API:
-- https://www.w3.org/TR/gamepad/)[https://www.w3.org/TR/gamepad/
+- https://www.w3.org/TR/gamepad/
 - https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API
