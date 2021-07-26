@@ -1,4 +1,4 @@
-The ```GamepadHelper``` class in ```gamepadhelper.js``` can be copied into any project, imported as a module into existing code, instantiated, and then used by calling the ```GamepadHelper.update()``` method within the game loop (see ```game.js``` for a simple example). Works with up to 4 gamepads connected simultaneously.
+The ```GamepadHelper``` class in ```gamepadhelper.js``` can be copied into any project, imported as a module into existing code, instantiated, and then used by calling the ```GamepadHelper.update()``` method within the game loop (see ```game.js``` for a simple example). Supports up to 4 gamepads connected simultaneously.
 
 When a button on a connected gamepad is pressed or released, a custom event will be dispatched to the document containing the respective indexes of the gamepad and button that was pressed/released in the ```detail``` property of the event.
 
@@ -8,9 +8,19 @@ There are two custom event types:
 
 Here is an example event listener that simply logs the gamepad/button that was pressed down:
 
-```
+```javascript
 document.addEventListener('gamepadbuttondown', (event) => {
-    console.log(event.detail.gamepad, event.detail.button);
+    console.log('button ' + event.detail.button + ' on gamepad ' + event.detail.gamepad + ' was pressed down');
+});
+```
+
+Here is some pseudocode which will make player 1 jump if button 0 on gamepad 0 is released:
+
+```javascript
+document.addEventListener('gamepadbuttonup', (event) => {
+    if (event.detail.gamepad == 0 && event.detail.button == 0) {
+        player1.jump();
+    }
 });
 ```
 
@@ -18,7 +28,7 @@ The current state of any button or axis on a connected gamepad can also be queri
 
 The ```mode``` property of an instance of the ```GamepadHelper``` class can be set 'default' to 'xbox' or 'playstation' to change the button labels if desired:
 
-```
+```javascript
 let gamepadhelper = new GamepadHelper();
 gamepadhelper.mode = 'xbox';
 gamepadhelper.mode = 'playstation';
