@@ -14,7 +14,7 @@ document.addEventListener('gamepadbuttondown', (event) => {
 });
 ```
 
-Here is some pseudocode which will make player 1 jump if button 0 on gamepad 0 is released:
+Here is a code sample which causes player 1 to jump if button 0 on gamepad 0 is released:
 
 ```javascript
 document.addEventListener('gamepadbuttonup', (event) => {
