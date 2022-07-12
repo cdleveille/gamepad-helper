@@ -1,7 +1,7 @@
 ```bash
-npm install gamepad-helper
-	or
-yarn add gamepad-helper
+$ npm install gamepad-helper
+
+$ yarn add gamepad-helper
 ```
 
 The `GamepadHelper` class imported as a module into existing code and used by calling the static `GamepadHelper.update()` method within the game loop. Supports up to 4 gamepads connected simultaneously.
