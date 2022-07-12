@@ -1,27 +1,33 @@
 {
-  "name": "gamepadhelper",
+  "name": "gamepad-helper",
   "version": "1.0.0",
-  "description": "JS wrapper class for the HTML5 Gamepad API",
-  "main": "gamepadhelper.js",
-  "scripts": {
-    "dev": "nodemon index.js"
+  "description": "Wrapper class for the HTML5 Gamepad API.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "engines": {
+    "node": "^14.15.0 || ^16.6.2",
+    "yarn": "^1.22.5"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cdleveille/gamepadhelper.git"
-  },
-  "keywords": [],
-  "author": "Chris Leveille",
+  "repository": "https://github.com/cdleveille/gamepad-helper.git",
+  "author": "Chris Leveille <cdleveille@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cdleveille/gamepadhelper/issues"
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint --ext .ts . && prettier --check .",
+    "format": "eslint --fix --ext .ts . && prettier --write .",
+    "build": "tsc",
+    "pack:light": "yarn build && npm pack --dry-run",
+    "pack:release": "yarn build && npm pack",
+    "release": "yarn build && npm publish"
   },
-  "homepage": "https://github.com/cdleveille/gamepadhelper#readme",
-  "dependencies": {
-    "finalhandler": "^1.1.2",
-    "http": "^0.0.1-security",
-    "http-server": "^0.12.3",
-    "nodemon": "^2.0.12",
-    "serve-static": "^1.14.1"
+  "devDependencies": {
+    "@types/node": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
   }
 }

@@ -1,0 +1,28 @@
+name: publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: use node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+
+      - run: yarn format
+
+      - run: yarn build
+
+      - run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > .npmrc
+          npm pack
+          npm publish
