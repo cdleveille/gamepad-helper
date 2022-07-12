@@ -1,6 +1,6 @@
 {
   "name": "gamepad-helper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper class for the HTML5 Gamepad API.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

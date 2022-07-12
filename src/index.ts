@@ -17,13 +17,13 @@ export default class GamepadHelper {
 	static buttonUpEvent: CustomEvent<{ gamepad: number; button: string | number }>;
 
 	static createButtonDownEvent(gamepad: number, button: number | string) {
-		this.buttonDownEvent = new CustomEvent("gampadbuttondown", {
+		GamepadHelper.buttonDownEvent = new CustomEvent("gampadbuttondown", {
 			detail: { gamepad, button }
 		} as IButtonEvent);
 	}
 
 	static createButtonUpEvent(gamepad: number, button: number | string) {
-		this.buttonUpEvent = new CustomEvent("gampadbuttonup", {
+		GamepadHelper.buttonUpEvent = new CustomEvent("gampadbuttonup", {
 			detail: { gamepad, button }
 		} as IButtonEvent);
 	}
@@ -35,16 +35,16 @@ export default class GamepadHelper {
 		for (let i = 0; i < gamepads.length; i++) {
 			const gamepad = gamepads[i];
 			if (gamepad) {
-				if (!this.gamepads[gamepad.index]) {
+				if (!GamepadHelper.gamepads[gamepad.index]) {
 					console.log("gamepad " + gamepad.index + " connected");
 				}
-				this.gamepads[gamepad.index] = gamepad;
+				GamepadHelper.gamepads[gamepad.index] = gamepad;
 			}
 		}
 	}
 
 	/** Main method intended to be called from within a game loop */
-	update() {
+	static update() {
 		GamepadHelper.updateGamepads();
 
 		// skip if there are no gamepads connected
@@ -56,7 +56,7 @@ export default class GamepadHelper {
 				const buttonLastUpdate =
 					GamepadHelper.gamepadsLastUpdate[gamepad.index]?.buttons[i];
 				const button = gamepad.buttons[i];
-				let buttonLabel = i.toString();
+				let buttonLabel = i as number | string;
 
 				if (GamepadHelper.mode == "xbox") {
 					buttonLabel = GamepadHelper.getXboxButton(i);
@@ -126,7 +126,7 @@ export default class GamepadHelper {
 			case 16:
 				return "system";
 			default:
-				throw `Invalid button number ${button}`;
+				return button;
 		}
 	}
 
@@ -164,7 +164,7 @@ export default class GamepadHelper {
 			case 16:
 				return "system";
 			default:
-				throw `Invalid button number: ${button}`;
+				return button;
 		}
 	}
 
