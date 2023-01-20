@@ -1,8 +1,18 @@
 {
   "name": "gamepad-helper",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Wrapper class for the HTML5 Gamepad API.",
-  "keywords": ["javascript", "npm", "typescript", "html5", "js", "npm-package", "gamepad", "javascript-game", "gamepad-api"],
+  "keywords": [
+    "javascript",
+    "npm",
+    "typescript",
+    "html5",
+    "js",
+    "npm-package",
+    "gamepad",
+    "javascript-game",
+    "gamepad-api"
+  ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "engines": {
