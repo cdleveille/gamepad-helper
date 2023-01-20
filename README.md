@@ -8,6 +8,8 @@ $ npm i gamepad-helper
 $ yarn add gamepad-helper
 ```
 
+Simply install the package via npm or yarn. You will need to use a module bundler like [webpack](https://webpack.js.org/) to access it in your client-side code.
+
 The `GamepadHelper` class can be imported and used by calling the `GamepadHelper.update()` static method within your game loop.
 
 ```javascript
