@@ -1,6 +1,6 @@
 # gamepad-helper
 
-Lightweight wrapper class for the HTML5 Gamepad API.
+Lightweight, zero-dependency wrapper class for the HTML5 Gamepad API.
 
 ```bash
 $ npm i gamepad-helper
