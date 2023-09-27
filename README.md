@@ -13,7 +13,7 @@ Simply install the package via npm or yarn. You will need to use a module bundle
 The `GamepadHelper` class can be imported and used by calling the `GamepadHelper.update()` static method within your game loop.
 
 ```javascript
-import GamepadHelper from "gamepad-helper";
+import { GamepadHelper } from "gamepad-helper";
 
 // ...within game loop
 GamepadHelper.update();

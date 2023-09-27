@@ -86,5 +86,3 @@ export class GamepadHelper {
 		);
 	}
 }
-
-export default GamepadHelper;
