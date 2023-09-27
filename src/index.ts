@@ -5,7 +5,7 @@ export interface IGamepadButtonEventDetail {
 	button: number;
 }
 
-export default class GamepadHelper {
+export class GamepadHelper {
 	public static gamepads: GamepadHub = {};
 	public static gamepadsLastUpdate: GamepadHub;
 	public static logOutput = false;
@@ -86,3 +86,5 @@ export default class GamepadHelper {
 		);
 	}
 }
+
+export default GamepadHelper;
